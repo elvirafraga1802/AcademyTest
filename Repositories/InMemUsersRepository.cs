@@ -17,14 +17,9 @@ namespace AcademyTest.Repositories
             throw new NotImplementedException();
         }
 
-        public IEnumerable<User> GetUsers(Guid id)
+        public IEnumerable<User> GetUsers()
         {
-            return (IEnumerable<User>)users.Where(users => users.Id == id).SingleOrDefault();
-        }
-
-        public void CreateUser(User user)
-        {
-            users.Add(user);
+            throw new NotImplementedException();
         }
     }
 }
