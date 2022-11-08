@@ -2,7 +2,7 @@ using AcademyTest.Entities;
 
 namespace AcademyTest.Repositories
 {
-    public class InMemUserRepository : IUserRepository
+    public class InMemUserRepository
     {
 
         private readonly List<User> users = new()
@@ -12,14 +12,17 @@ namespace AcademyTest.Repositories
             new User{Id = Guid.NewGuid(),Name = "Gustavo", Email = "", Phone = 4427895614 }
         };
 
-        public User GetItem(Guid id)
-        {
-            throw new NotImplementedException();
-        }
 
         public IEnumerable<User> GetUsers()
         {
-            throw new NotImplementedException();
+            return users;
         }
+        public User GetItem(Guid id)
+        {
+            throw new NotImplementedException();
+            //return this.users.Where(u => u.Id == id).SingleOrDefault();
+        }
+
+        
     }
 }

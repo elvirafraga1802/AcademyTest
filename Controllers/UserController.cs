@@ -16,11 +16,15 @@ namespace AcademyTest.Controllers
         {
             this.repository = repository;
         }
-        [HttpGet]
+
+
+        [HttpGet("GetAll")]
         public IEnumerable<UserDto> GetUsers()
         {
             var items = repository.GetUsers().Select( item => item.AsDto());
             return items;
         }
+        
+
     }
 }

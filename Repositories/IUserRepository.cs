@@ -4,7 +4,13 @@ namespace AcademyTest.Repositories
 {
     public interface IUserRepository
     {
-        User GetItem(Guid id);
+        User CreateUser(Guid id);
+        User ReadItem(Guid id);
+        User UpdateUser(Guid id);
+        User DeleteUser(Guid id);
         IEnumerable<User> GetUsers();
+        
+        
+        
     }
 }
