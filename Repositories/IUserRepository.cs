@@ -8,7 +8,8 @@ namespace AcademyTest.Repositories
         User ReadItem(Guid id);
         User UpdateUser(Guid id);
         User DeleteUser(Guid id);
-        IEnumerable<User> GetUsers();
+        Task<List<User>> GetUsers();
+        
         
         
         

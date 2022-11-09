@@ -9,7 +9,7 @@ namespace AcademyTest.Repositories
         {
             new User{Id = Guid.NewGuid(),Name = "Elvira", Email = "elvira.fraga@hotmail.com", Phone = 4427127244},
             new User{Id = Guid.NewGuid(),Name = "Andres", Email = "20", Phone = 44267425961},
-            new User{Id = Guid.NewGuid(),Name = "Gustavo", Email = "", Phone = 4427895614 }
+            new User{Id = Guid.NewGuid(),Name = "Gustavo", Email = "30", Phone = 4427895614 }
         };
 
 
