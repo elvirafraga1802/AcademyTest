@@ -1,3 +1,4 @@
+using AcademyTest.Dtos;
 using AcademyTest.Entities;
 
 namespace AcademyTest.Repositories
@@ -9,6 +10,15 @@ namespace AcademyTest.Repositories
         public int Quantity { get; init; }
         public User? Owner { get; init; }
         public int UserId { get; init; }
+
+        public ItemDto AsDto(){
+        return new ItemDto(){
+            Id = this.Id,
+            Name = this.Name,
+            Description = this.Description,
+            Quantity = this.Quantity,
+        };
+    }
 
     }
 }

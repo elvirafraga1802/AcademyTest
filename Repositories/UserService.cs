@@ -1,43 +1,56 @@
 using AcademyTest.Context;
 using AcademyTest.Dtos;
 using AcademyTest.Entities;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace AcademyTest.Repositories
 {
     public class UserService : IUserRepository
     {
-        public DataContext _context;
+        public DataContext repository;
 
-        public UserService(DataContext context)
+        public UserService(DataContext repository)
         {
-            _context = context;      
+            this.repository = repository;
         }
-      
-     
-        public User CreateUser(Guid id)
+
+        public Task<User> CreateUserAsync(Guid id)
         {
             throw new NotImplementedException();
         }
 
-        public User DeleteUser(Guid id)
+        public Task DeleteUserAsync(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<User> GetUserAsync(Guid id)
         {
             throw new NotImplementedException();
         }
 
         public async Task<List<User>> GetUsers()
         {
-            return await _context.Users.ToListAsync();
+            throw new NotImplementedException();
         }
 
-        public User ReadItem(Guid id)
+        public async Task<IEnumerable<User>> GetUsersAsync()
+        {
+            return await repository.Users.ToListAsync();
+        }
+
+
+        public Task ReadItemAsync(Guid id)
         {
             throw new NotImplementedException();
         }
 
-        public User UpdateUser(Guid id)
+        public Task UpdateUserAsync(Guid id)
         {
             throw new NotImplementedException();
         }
+
+       
     }
 }

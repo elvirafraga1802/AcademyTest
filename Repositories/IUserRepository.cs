@@ -4,14 +4,11 @@ namespace AcademyTest.Repositories
 {
     public interface IUserRepository
     {
-        User CreateUser(Guid id);
-        User ReadItem(Guid id);
-        User UpdateUser(Guid id);
-        User DeleteUser(Guid id);
-        Task<List<User>> GetUsers();
-        
-        
-        
-        
+        Task <User>CreateUserAsync(Guid id);
+        Task <IEnumerable<User>> GetUsersAsync();
+        Task <User> GetUserAsync(Guid id);
+        Task ReadItemAsync(Guid id);
+        Task UpdateUserAsync(Guid id);
+        Task DeleteUserAsync(Guid id);
     }
 }

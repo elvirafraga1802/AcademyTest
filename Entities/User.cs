@@ -9,11 +9,7 @@ namespace AcademyTest.Entities
         public string Email { get; init; } = string.Empty;
         public long Phone { get; init; }
 
-    //     internal static object Where(Func<object, bool> value)
-    //     {
-    //         throw new NotImplementedException();
-    //     }
-    // }
+ 
 
     public UserDto AsDto(){
         return new UserDto(){

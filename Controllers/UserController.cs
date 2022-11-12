@@ -1,7 +1,8 @@
 using AcademyTest.Dtos;
+using AcademyTest.Entities;
 using AcademyTest.Repositories;
 using Microsoft.AspNetCore.Mvc;
-using System.Linq;
+
 
 namespace AcademyTest.Controllers
 {
@@ -10,20 +11,51 @@ namespace AcademyTest.Controllers
 
     public class UserController : ControllerBase
     {
-        public IUserRepository _repo;
-        public UserController(IUserRepository _repo)
+        public IUserRepository repository;
+        public UserController(IUserRepository repository)
         {
-            this._repo = _repo;            
+            this.repository = repository;            
         }
 
         [HttpGet("GetAll")] 
-        public async Task<List<UserDto>> GetUsers()
+        public async Task<IEnumerable<UserDto>> GetUsersAsync()
         {
-            var a = await _repo.GetUsers();
-            var b = a.Select(u => u.AsDto()).ToList();
-            return b;
+           var users =(await repository.GetUsersAsync()).Select(user => user.AsDto());
+           return users;
+            
+        }
+         
+
+        [HttpGet("{id}")] 
+        public async Task <ActionResult<UserDto>> GetUserAsync(Guid id)
+        {
+           var user = await repository.GetUserAsync(id);
+
+           if(user is null)
+           {
+            return NotFound();
+           }
+           return user.AsDto();
+            
         }
         
+        [HttpPost]
+        public async Task <ActionResult<UserDto>> CreateUser(CreateUserDto id)
+        {
+            throw new NotImplementedException();
+        }
+
+        [HttpPut("{id}")]
+        public async Task <UserDto> UpdateUser(Guid id)
+        {
+            throw  new NotImplementedException();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task <UserDto> DeleteUser(Guid id)
+        {
+            throw new NotImplementedException();
+        }
 
     }
 }

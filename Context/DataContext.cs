@@ -9,5 +9,7 @@ namespace AcademyTest.Context{
 
         public DbSet <User> Users => Set<User>();
         public DbSet <InventoryItem> Items => Set<InventoryItem>();
+
+        
     }
 }
